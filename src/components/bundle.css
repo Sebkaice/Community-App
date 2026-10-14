@@ -1,0 +1,396 @@
+/* Community App Design System Bundle CSS
+   Prefix: ca-
+   Typography: Fugaz One (display, buttons, chips, big numbers) + Work Sans (body, labels)
+   Colors: surface (#fff), surface-sunken (#f4f4f5), ink (#09090b), ink-muted (#71717a),
+           cobalt (#2563eb), tomato (#e11d48), sun (#f59e0b), blush (#fda4af), sky (#0284c7)
+*/
+
+@theme {
+  --font-display: 'Fugaz One', cursive, sans-serif;
+  --font-body: 'Work Sans', sans-serif;
+  --color-surface: #ffffff;
+  --color-surface-sunken: #f4f4f5;
+  --color-ink: #09090b;
+  --color-ink-muted: #71717a;
+  --color-border-subtle: #e4e4e7;
+  --color-cobalt: #2563eb;
+  --color-on-cobalt: #ffffff;
+  --color-tomato: #e11d48;
+  --color-on-tomato: #ffffff;
+  --color-sun: #f59e0b;
+  --color-blush: #fda4af;
+  --color-sky: #0284c7;
+  --color-success: #16a34a;
+  --color-success-tint: #ecfdf5;
+  --color-danger: #dc2626;
+  --color-danger-tint: #fef2f2;
+}
+
+:root {
+  --ca-surface: #ffffff;
+  --ca-surface-sunken: #f4f4f5;
+  --ca-ink: #09090b;
+  --ca-ink-muted: #71717a;
+  --ca-border-subtle: #e4e4e7;
+  --ca-cobalt: #2563eb;
+  --ca-on-cobalt: #ffffff;
+  --ca-tomato: #e11d48;
+  --ca-on-tomato: #ffffff;
+  --ca-sun: #f59e0b;
+  --ca-blush: #fda4af;
+  --ca-sky: #0284c7;
+  --ca-success: #16a34a;
+  --ca-success-tint: #ecfdf5;
+  --ca-danger: #dc2626;
+  --ca-danger-tint: #fef2f2;
+  --ca-focus-ring: #2563eb;
+}
+
+/* Base resets & typography */
+body {
+  font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: var(--ca-ink);
+  background-color: var(--ca-surface);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+.ca-font-display {
+  font-family: 'Fugaz One', cursive, sans-serif;
+  font-weight: 400; /* Fugaz One has only one weight: do not bold or fake-italic */
+  font-style: normal;
+}
+
+.ca-font-body {
+  font-family: 'Work Sans', sans-serif;
+}
+
+/* Typography scales */
+.ca-display-lg {
+  font-family: 'Fugaz One', cursive, sans-serif;
+  font-size: 2.25rem; /* 36px */
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--ca-ink);
+}
+
+.ca-display-md {
+  font-family: 'Fugaz One', cursive, sans-serif;
+  font-size: 1.5rem; /* 24px */
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  color: var(--ca-ink);
+}
+
+.ca-display-sm {
+  font-family: 'Fugaz One', cursive, sans-serif;
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.3;
+  color: var(--ca-ink);
+}
+
+.ca-stat {
+  font-family: 'Fugaz One', cursive, sans-serif;
+  font-size: 2rem; /* 32px */
+  line-height: 1;
+  color: var(--ca-ink);
+}
+
+.ca-body {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.9375rem; /* 15px */
+  line-height: 1.5;
+  color: var(--ca-ink);
+}
+
+.ca-body-sm {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.8125rem; /* 13px */
+  line-height: 1.4;
+  color: var(--ca-ink-muted);
+}
+
+.ca-label {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.75rem; /* 12px */
+  font-weight: 600;
+  text-transform: none; /* sentence case */
+  color: var(--ca-ink);
+}
+
+.ca-caption {
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.6875rem; /* 11px */
+  color: var(--ca-ink-muted);
+}
+
+/* Focus styles: 3px outline with 2px offset */
+.ca-focus-ring:focus-visible,
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--ca-focus-ring) !important;
+  outline-offset: 2px !important;
+}
+
+/* BUTTONS
+   Round corners: radius-pill
+   Text in Fugaz One
+*/
+.ca-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 9999px;
+  font-family: 'Fugaz One', cursive, sans-serif;
+  font-size: 0.875rem;
+  line-height: 1;
+  padding: 0.75rem 1.25rem;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.05s ease;
+  user-select: none;
+  text-decoration: none;
+}
+
+.ca-button:active {
+  transform: scale(0.98);
+}
+
+.ca-button-cobalt {
+  background-color: var(--ca-cobalt);
+  color: var(--ca-on-cobalt);
+}
+.ca-button-cobalt:hover {
+  background-color: #1d4ed8;
+}
+
+.ca-button-tomato {
+  background-color: var(--ca-tomato);
+  color: var(--ca-on-tomato);
+}
+.ca-button-tomato:hover {
+  background-color: #be123c;
+}
+
+.ca-button-outline {
+  background-color: transparent;
+  color: var(--ca-ink);
+  border-color: var(--ca-border-subtle);
+}
+.ca-button-outline:hover {
+  background-color: var(--ca-surface-sunken);
+  border-color: #d4d4d8;
+}
+
+.ca-button-quiet {
+  background-color: var(--ca-surface-sunken);
+  color: var(--ca-ink);
+}
+.ca-button-quiet:hover {
+  background-color: #e4e4e7;
+}
+
+.ca-button-full {
+  width: 100%;
+}
+
+/* ACTIVITY CHIP
+   radius-pill, Fugaz One font, shape marker + label
+*/
+.ca-activity-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  border-radius: 9999px;
+  padding: 0.25rem 0.625rem;
+  font-family: 'Fugaz One', cursive, sans-serif;
+  font-size: 0.75rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.ca-activity-chip-run {
+  background-color: var(--ca-cobalt);
+  color: var(--ca-on-cobalt);
+}
+
+.ca-activity-chip-ride {
+  background-color: var(--ca-tomato);
+  color: var(--ca-on-tomato);
+}
+
+.ca-activity-chip-social {
+  background-color: var(--ca-sun);
+  color: var(--ca-ink);
+}
+
+.ca-activity-chip-wellness {
+  background-color: var(--ca-sky);
+  color: #ffffff;
+}
+
+/* STAT CARD
+   Dashboard stat tile: flat 1px subtle border or quiet fill
+*/
+.ca-stat-card {
+  background-color: var(--ca-surface);
+  border: 1px solid var(--ca-border-subtle);
+  border-radius: 1rem; /* radius-lg */
+  padding: 1rem; /* space-4 */
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.ca-stat-card-accent-cobalt {
+  background-color: var(--ca-cobalt);
+  border-color: transparent;
+  color: var(--ca-on-cobalt);
+}
+.ca-stat-card-accent-cobalt .ca-stat {
+  color: var(--ca-on-cobalt);
+}
+.ca-stat-card-accent-cobalt .ca-stat-label {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.ca-stat-card-accent-sun {
+  background-color: var(--ca-sun);
+  border-color: transparent;
+  color: var(--ca-ink);
+}
+.ca-stat-card-accent-sun .ca-stat {
+  color: var(--ca-ink);
+}
+.ca-stat-card-accent-sun .ca-stat-label {
+  color: #27272a;
+}
+
+/* EVENT CARD
+   For athlete view: flat card with radius-lg (16px), 1px border-subtle or flat fill
+*/
+.ca-event-card {
+  background-color: var(--ca-surface);
+  border: 1px solid var(--ca-border-subtle);
+  border-radius: 1rem; /* 16px */
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.ca-event-card-cobalt {
+  background-color: var(--ca-cobalt);
+  border-color: transparent;
+  color: var(--ca-on-cobalt);
+}
+
+/* DATA TABLE
+   Dense merchant dashboard table
+   Headers: surface-sunken
+   Hover rows: surface-sunken
+*/
+.ca-data-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.8125rem;
+}
+
+.ca-data-table th {
+  background-color: var(--ca-surface-sunken);
+  color: var(--ca-ink-muted);
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-align: left;
+  padding: 0.625rem 1rem;
+  border-bottom: 1px solid var(--ca-border-subtle);
+  white-space: nowrap;
+}
+
+.ca-data-table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--ca-border-subtle);
+  color: var(--ca-ink);
+  vertical-align: middle;
+}
+
+.ca-data-table tr:hover td {
+  background-color: var(--ca-surface-sunken);
+}
+
+/* STATUS LABELS
+   radius-sm (4px)
+*/
+.ca-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  border-radius: 4px; /* radius-sm */
+  padding: 0.125rem 0.375rem;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.ca-status-success {
+  background-color: var(--ca-success-tint);
+  color: var(--ca-success);
+  border: 1px solid rgba(22, 163, 74, 0.2);
+}
+
+.ca-status-danger {
+  background-color: var(--ca-danger-tint);
+  color: var(--ca-danger);
+  border: 1px solid rgba(220, 38, 38, 0.2);
+}
+
+.ca-status-warning {
+  background-color: #fef9c3;
+  color: #854d0e;
+  border: 1px solid rgba(234, 179, 8, 0.3);
+}
+
+.ca-status-neutral {
+  background-color: var(--ca-surface-sunken);
+  color: var(--ca-ink-muted);
+  border: 1px solid var(--ca-border-subtle);
+}
+
+/* FIELD (Inputs, Selects, Labels)
+   radius-md (8px)
+*/
+.ca-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+}
+
+.ca-input {
+  border-radius: 0.5rem; /* radius-md */
+  border: 1px solid var(--ca-border-subtle);
+  background-color: var(--ca-surface);
+  color: var(--ca-ink);
+  padding: 0.625rem 0.875rem;
+  font-family: 'Work Sans', sans-serif;
+  font-size: 0.875rem;
+  width: 100%;
+  transition: border-color 0.15s ease;
+}
+
+.ca-input:hover {
+  border-color: #d4d4d8;
+}
+
+.ca-input::placeholder {
+  color: var(--ca-ink-muted);
+}
+
+/* SHADOW FLOAT: only for menus, popovers and dialogs */
+.ca-shadow-float {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+}

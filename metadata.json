@@ -1,0 +1,6 @@
+{
+  "name": "Community App",
+  "description": "Find the week's rides, runs and sessions in Paris, while cafés, bakeries and clothing brands create events and track attendance.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
